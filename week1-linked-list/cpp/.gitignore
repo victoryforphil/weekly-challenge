@@ -2,3 +2,4 @@ CMakeCache.txt
 build/*
 .vscode/*
 CMakeFiles/*
+.exe*

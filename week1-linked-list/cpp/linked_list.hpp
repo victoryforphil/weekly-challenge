@@ -91,22 +91,42 @@ public:
     }
     LinkNode *removeAt(int index)
     {
+
+        
         LinkNode* cur= getHead();
-        for(int i=0;i<=index - 2;i++ ){
+        LinkNode* last = cur;
+        for(int i=0;i<=index - 1;i++ ){
             if( cur->next != nullptr){
+                last = cur;
                 cur = cur->next;
             }
            
         }
+        last->next = cur->next;
+        delete cur;
+        return last;
+    }
+    
+    void reverse(){
+        LinkNode* cur =  getHead();
+        LinkNode* prev =  nullptr;
+        LinkNode* next =  nullptr;
         
-        return cur;
-        return _head;
+
+        while(cur != nullptr){
+            next = cur->next;
+            cur->next = prev;
+            prev = cur;
+            cur = next;
+        }
+
+        _head = prev;
     }
 
 private:
     LinkNode *_head = nullptr;
     LinkNode *_tail = nullptr;
-    int _count;
+
 };
 
 #endif

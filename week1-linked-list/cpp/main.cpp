@@ -56,5 +56,23 @@ int main(){
     std::cout << elem->data;
     std::cout << std::endl;
 
+    std::cout << "Remove 5: \n \t ";
+    list.removeAt(5);
+    next = list.getHead();
+    while(next != nullptr){
+        std::cout << next->data << " -> ";
+        next = next->next;
+    }
+    std::cout << std::endl;
+
+    std::cout << "Reverse 5: \n \t ";
+    list.reverse();
+    next = list.getHead();
+    while(next != nullptr){
+        std::cout << next->data << " -> ";
+        next = next->next;
+    }
+    std::cout << std::endl;
+
     return 0;
 }
